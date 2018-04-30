@@ -16,18 +16,45 @@ module.exports = function(app) {
 
   
 
-  //  TODO: A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
-  // FIXME: WTF?! hah.. what does this witchcraft ('/api/friends') do?
+  // gets data from friends.js and places it in the /api/friends route
   app.get("/api/friends", function(req, res) {
     res.json(friendsArray);
   });
 
-  //  TODO: A POST routes `/api/friends`. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic. 
+  // captures new cat and posts it  to friends.js 
   app.post("/api/friends", function(req, res) {
     // TODO: Post new survey results
+    var catCount = 0;
+    var catMatch = 0;
+    var newCatScores = req.body.scores;
+    var scoresArray = [];
 
-    friends.push(req.body)
-    // TODO: Handle Compatibility logic
+    //runs through cats in current list then through new cat scores to find cat matches
+    for(var i=0; i<friendsArray.length; i++){
+      var scoreDifference = 0;
+     
+      for(var ncs=0; ncs<newCatScores.length; ncs++){
+        scoreDifference += (Math.abs(parseInt(friendsArray[i].scores[ncs]) - parseInt(newCatScores[ncs])));
+      }
+
+      //pushes new results into scoresArray
+      scoresArray.push(scoreDifference);
+    }
+
+    //compares cats and finds best match
+    for(var i=0; i<scoresArray.length; i++){
+      if(scoresArray[i] <= scoresArray[catMatch]){
+        catMatch = i;
+      }
+    }
+
+    //return bestcatMatch data
+    var bestCatMatch = friendsArray[catMatch];
+    res.json(bestCatMatch);
+
+    //pushes new submission into the friendsList array
+    
+    friendsArray.push(req.body)
 
 
   });
