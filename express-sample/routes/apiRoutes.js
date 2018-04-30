@@ -23,7 +23,7 @@ module.exports = function(app) {
 
   // captures new cat and posts it  to friends.js 
   app.post("/api/friends", function(req, res) {
-    // TODO: Post new survey results
+    
     var catCount = 0;
     var catMatch = 0;
     var newCatScores = req.body.scores;

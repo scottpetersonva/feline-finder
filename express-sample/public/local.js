@@ -1,9 +1,10 @@
 $( document ).ready(function(){
-    
+
+    // materialize
     $('select').material_select();
     $('.carousel').carousel();
 
-  
+    // captures form data
     $( "#submit-survey" ).click(function() {
       event.preventDefault();
       var newCat = {
@@ -32,7 +33,7 @@ $( document ).ready(function(){
           $("#cat-img").attr("src", data.profilePic);
 
         });
-
+        // materialize modal
         $('.modal').modal();
 
 
