@@ -24,7 +24,6 @@ module.exports = function(app) {
   // captures new cat and posts it  to friends.js 
   app.post("/api/friends", function(req, res) {
     
-    var catCount = 0;
     var catMatch = 0;
     var newCatScores = req.body.scores;
     var scoresArray = [];
@@ -33,10 +32,6 @@ module.exports = function(app) {
     for(var i=0; i<friendsArray.length; i++){
       var scoreDifference = 0;
      
-      for(var ncs=0; ncs<newCatScores.length; ncs++){
-        scoreDifference += (Math.abs(parseInt(friendsArray[i].scores[ncs]) - parseInt(newCatScores[ncs])));
-      }
-
       //pushes new results into scoresArray
       scoresArray.push(scoreDifference);
     }
