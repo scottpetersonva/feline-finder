@@ -5,7 +5,7 @@ This app matches cats with other similar cats.  Enter information in about a cat
 ## Link to App
 
 <!-- post link here -->
-[View Project](https://scottpetersonva.github.io/Bootstrap-Portfolio)
+[View Project](https://scottpetersonva.github.io/Feline-Finder)
 
 ## Technologies Used
 
