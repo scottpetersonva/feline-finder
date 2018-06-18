@@ -9,15 +9,14 @@ This app matches cats with other similar cats.  Enter information in about a cat
 
 ## Technologies Used
 
-Node.js
-body-parager NPM Package - (https://www.npmjs.com/package/inquirer)
-express NPM Package - (https://www.npmjs.com/package/express)
-path NPM Package - (https://www.npmjs.com/package/path)
+* Node.js
+* body-parager NPM Package - (https://www.npmjs.com/package/inquirer)
+* express NPM Package - (https://www.npmjs.com/package/express)
+* path NPM Package - (https://www.npmjs.com/package/path)
 
 ## Built With
 
-Visual Studio Code
-Materialize
+Visual Studio Code | Materialize | jQuery
 
 ## Author
 
