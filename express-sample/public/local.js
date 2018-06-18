@@ -3,6 +3,7 @@ $( document ).ready(function(){
     // materialize
     $('select').material_select();
     $('.carousel').carousel();
+    $('.parallax').parallax();
 
     // captures form data
     $( "#submit-survey" ).click(function() {
